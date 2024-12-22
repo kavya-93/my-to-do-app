@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(320deg, #bcd006, #1536e1);
+    padding: 10px;
+}
+
+.todo-app img { 
+    width: 30px;
+    margin-left: 10px;
+    height: auto; 
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 840px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #031fbf;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ededed;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input, #priority-box, #date-box{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #fa4371;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+ul li{
+    list-style: none;
+    font-size: 15px;
+    padding: 12px 8px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px; /* To match the overall rounded style */
+}
+
+ul li::before{ 
+    content: ''; 
+    height: 28px; 
+    width: 28px; 
+    border-radius: 50%; 
+    background-image: url(images/circle.jpg); 
+    background-size: cover; 
+    background-position: center; 
+    top: 12px; 
+    left: 8px; }
+
+/* Category styling */ 
+.category { 
+    font-weight: bold; margin-right: 10px; 
+}
+
+/* Priority colors for entire row */
+.high-priority {
+    background-color: #ffcccc; /* Light red */
+}
+
+.medium-priority {
+    background-color: #fff5cc; /* Light yellow */
+}
+
+.low-priority {
+    background-color: #ccffcc; /* Light green */
+}
+
+.priority { 
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Task content styling */
+.task-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Due date styling */
+.date { 
+    font-style: italic; 
+    color: #007bff; 
+    cursor: pointer; 
+    margin-left: auto; /* Aligns the due date to the extreme right */ 
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{ 
+    background-image: url(images/check.jpg); 
+}
+
+ul li span.close {
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span.close:hover{
+    background: #edeef0;
+}
+
+/* Placeholder effect for date input */ 
+.date-placeholder::before { 
+    content: attr(placeholder); 
+    color: #aaa; 
+    display: block; 
+    position: absolute; 
+    pointer-events: none; 
+    padding-left: 10px; 
+} 
+
+.date-placeholder:focus::before { 
+    display: none; 
+} 
+
+/* Hide the default placeholder text */ 
+
+.date-placeholder::-webkit-datetime-edit-text, 
+.date-placeholder::-webkit-datetime-edit-month-field, 
+.date-placeholder::-webkit-datetime-edit-day-field, 
+.date-placeholder::-webkit-datetime-edit-year-field { 
+    color: transparent; 
+}
